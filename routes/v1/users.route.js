@@ -24,6 +24,7 @@ router.route('/postBlog').put(putRequest.putBlogPost)
 router.route('/addCourse').put(putRequest.addCourse)
 router.route('/addCourse').put(putRequest.addCourse)
 router.route('/teacherDoc').put(putRequest.teacherRequest)
+router.route('/addUser/:email').put(putRequest.addUser)
 
 
 //all patch request 

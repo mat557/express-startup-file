@@ -31,7 +31,7 @@ module.exports.updateProfileData = async(req,res) =>{
         const updatedDoc = {
             $set : data,
         };
-        const result = db.collection('users').updateMany( filter , updatedDoc , options);
+        const result = await  db.collection('users').updateMany( filter , updatedDoc , options);
         res.json(result);
     }
     catch(err){
@@ -46,7 +46,7 @@ module.exports.updateAndAddComment = async(req,res) =>{
         const email = req.params.email;
         const doc = req.body;
         const options = { upsert : true };
-        const filter = { email : email }
+        const filter = { email : email };
         const updatedDoc = {
             $set : doc,
         };
