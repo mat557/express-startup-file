@@ -3,6 +3,7 @@ const router = express.Router();
 const getRequestController = require('../../controllers/getAllRequest.js');
 const putRequest = require('../../controllers/putRequestController.js');
 const patchRequest = require('../../controllers/patchRequestController.js');
+const  deleteRrequest  = require('../../controllers/deleteRequestController.js');
 
 //all get request
 router.route('/').get(getRequestController.getAllUsers)
@@ -32,5 +33,10 @@ router.route('/updateSeat/:id').patch(patchRequest.updateSeatNumber)
 router.route('/updateProfile/:email').patch(patchRequest.updateProfileData)
 router.route('/addComment/:email').patch(patchRequest.updateAndAddComment)
 
+
+
+//all delete request 
+
+router.route('/deleteUser/:email').delete(deleteRrequest.deleteUserRrequest)
 
 module.exports =  router;
